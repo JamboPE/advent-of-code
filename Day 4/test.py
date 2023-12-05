@@ -1,0 +1,2 @@
+test = "lolxd"
+print(testc)
