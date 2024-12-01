@@ -1,5 +1,7 @@
 from datetime import datetime
 import os
+import requests
+import credentials
 
 current_day = datetime.now().day # Change this to the day you want to create
 current_year = datetime.now().year
@@ -23,6 +25,13 @@ if datetime.now().month != 12 or current_day < 1 or current_day > 25:
     exit()
 
 try:
+    os.mkdir(str(current_year))
+except:
+    print(current_year,"folder found")
+else:
+    print("Created",current_year,"folder")
+
+try:
     os.mkdir(directory)
 except:
     print("Uhh boss,",directory,"already exists")
@@ -32,16 +41,14 @@ create_file(directory + "/dev_inputA")
 create_file(directory + "/dev_inputB")
 
 py_file = open(python_file, "w")
-py_file.write(f"# Advent of Code 2023 Day {current_day} Part A")
+py_file.write(f"# Advent of Code {current_year} Day {current_day} Part A")
 template = open("template.py", "r")
 py_file.write(template.read())
 template.close()
 py_file.close()
 
-curl_file = open("curl_command", "r")
-for line in curl_file:
-    curl_command = str(line).replace("CHANGETHISONE",str(current_day)).replace("CHANGETHISDIRECTORY",directory)
-os.system(curl_command)
-curl_file.close()
+input_file = f"{directory}/input"
+with open(input_file, "w") as f:
+    f.write(requests.get(f"https://adventofcode.com/{current_year}/day/{current_day}/input",headers={"cookie": credentials.cookie}).text)
 
 print("Done!")

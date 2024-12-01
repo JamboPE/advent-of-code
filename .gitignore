@@ -1,2 +1,4 @@
 __pycache__/
 curl_command
+credentials.py
+.venv
