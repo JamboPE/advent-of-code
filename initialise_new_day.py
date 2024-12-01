@@ -2,11 +2,12 @@ from datetime import datetime
 import os
 
 current_day = datetime.now().day # Change this to the day you want to create
+current_year = datetime.now().year
 
 if datetime.now().hour < 5:
     current_day -= 1
 
-directory = f"Day {current_day}"
+directory = f"{current_year}/Day {current_day}"
 python_file = directory + f"/AOC_Day{current_day}A.py"
 
 def create_file(file_name):
