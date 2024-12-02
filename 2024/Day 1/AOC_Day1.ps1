@@ -1,4 +1,4 @@
-# Advent of Code 2024 Day 1 Part A
+# Advent of Code 2024 Day 1
 $firstList = @()
 $secondList = @()
 $fileInput = Get-Content -Path "2024/Day 1/input" -Delimiter "`n"
