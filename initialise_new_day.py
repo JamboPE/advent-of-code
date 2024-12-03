@@ -41,7 +41,7 @@ create_file(directory + "/dev_inputA")
 create_file(directory + "/dev_inputB")
 
 py_file = open(python_file, "w")
-py_file.write(f"# Advent of Code {current_year} Day {current_day} Part A")
+py_file.write(f"# Advent of Code {current_year} Day {current_day}")
 template = open("template.py", "r")
 py_file.write(template.read())
 template.close()
