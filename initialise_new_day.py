@@ -10,7 +10,7 @@ if datetime.now().hour < 5:
     current_day -= 1
 
 directory = f"{current_year}/Day {current_day}"
-python_file = directory + f"/AOC_Day{current_day}A.py"
+python_file = directory + f"/AOC_Day{current_day}.py"
 
 def create_file(file_name):
     try:
@@ -37,8 +37,7 @@ except:
     print("Uhh boss,",directory,"already exists")
     exit()
 create_file(python_file)
-create_file(directory + "/dev_inputA")
-create_file(directory + "/dev_inputB")
+create_file(directory + "/dev_input")
 
 py_file = open(python_file, "w")
 py_file.write(f"# Advent of Code {current_year} Day {current_day}")
