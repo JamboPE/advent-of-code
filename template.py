@@ -7,11 +7,19 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 day = str(os.path.basename(__file__))[-4:-3]
 year = str(os.path.dirname(__file__)).split("\\")[-2]
 
-# Part A
-#with open(f"{year}/Day {day}/input","r") as input_file:
-with open(f"{year}/Day {day}/dev_input","r") as input_file:
+option = input("""What input file should I use?
+0: dev_input
+1: input
+Option (0/1): """)
+if option == "1":
+   inputFile = f"{year}/Day {day}/input"
+else:
+   inputFile = f"{year}/Day {day}/dev_input"
+
+with open(inputFile,"r") as input_file:
    lines = input_file.readlines()
    input_file.close()
 
+# Part A
 for line in lines:
    print(line)
