@@ -24,3 +24,5 @@ with open(inputFile,"r") as input_file:
 def partA():
    for line in lines:
       print(line)
+
+partA()
