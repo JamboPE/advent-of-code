@@ -21,5 +21,6 @@ with open(inputFile,"r") as input_file:
    input_file.close()
 
 # Part A
-for line in lines:
-   print(line)
+def partA():
+   for line in lines:
+      print(line)
