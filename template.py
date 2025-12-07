@@ -12,3 +12,6 @@ year = str(os.path.dirname(__file__)).split("\\")[-2]
 with open(f"{year}/Day {day}/dev_input","r") as input_file:
    lines = input_file.readlines()
    input_file.close()
+
+for line in lines:
+   print(line)
